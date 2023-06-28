@@ -54,7 +54,7 @@ class Solver(BaseSolver):
         Aty = self.A.T @ self.y
         AtA = LinearOperator(shape=(n * m, n * m),
                              matvec=lambda x: self.A.T @ (
-                                self.A @ x.reshape((n, m))))
+            self.A @ x.reshape((n, m))))
         proj = {
             'anisotropic': dual_prox_tv_aniso,
             'isotropic': dual_prox_tv_iso,
